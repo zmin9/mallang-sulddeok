@@ -1,0 +1,21 @@
+/*기본 화면*/
+.background {
+    /*화면 꽉 채우기*/
+    width: 100vw;
+    height: 100vh;
+    margin:-8px;
+
+    background: bisque;
+    position: relative;
+}
+
+.Home {
+    width: 540px;
+    background: aqua;
+    position: absolute;
+    margin-top: 50px;
+    right: 50%;
+    left: 50%;
+    transform: translate(-50% ,0); /*(가로, 세로)*/
+    text-align: center;
+}
