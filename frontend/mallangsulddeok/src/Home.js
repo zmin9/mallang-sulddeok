@@ -1,6 +1,6 @@
 const Home = ({setPage}) => {
   return(
-    <div className = "background">
+    <div className = "Background">
       <div className="Home">
         <button> 공유 </button>
         <br/>Home<br/>

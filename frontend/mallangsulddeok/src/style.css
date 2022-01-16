@@ -1,21 +1,67 @@
 /*기본 화면*/
-.background {
+.Background {
     /*화면 꽉 채우기*/
     width: 100vw;
     height: 100vh;
     margin:-8px;
 
-    background: bisque;
+    background: #1f170b;
     position: relative;
 }
 
 .Home {
+    color: aliceblue;
+
     width: 540px;
-    background: aqua;
     position: absolute;
     margin-top: 50px;
     right: 50%;
     left: 50%;
     transform: translate(-50% ,0); /*(가로, 세로)*/
     text-align: center;
+}
+
+.Main {
+    background: rgb(219, 185, 121);
+
+    width: 540px;
+    position: absolute;
+    margin-top: 50px;
+    right: 50%;
+    left: 50%;
+    transform: translate(-50% ,0); /*(가로, 세로)*/
+}
+
+.Result {
+    background: rgb(219, 185, 121);
+
+    width: 540px;
+    position: absolute;
+    margin-top: 50px;
+    right: 50%;
+    left: 50%;
+    transform: translate(-50% ,0); /*(가로, 세로)*/
+}
+
+.Question {
+    background: beige;
+    margin:20px;
+    padding:10px;
+    height: 300px;
+}
+
+.Answer1 {
+    background: beige;
+    margin:20px;
+    padding:10px;
+    height:100px;
+    text-align: left;
+}
+
+.Answer2 {
+    background: beige;
+    margin:20px;
+    padding:10px;
+    height:100px;
+    text-align: right;
 }
