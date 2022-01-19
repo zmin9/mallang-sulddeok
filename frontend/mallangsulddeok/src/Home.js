@@ -1,4 +1,10 @@
-const Home = ({setPage}) => {
+import { useEffect } from "react";
+
+const Home = ({setPage, setUserValue}) => {
+  useEffect(()=>{
+    setUserValue([0, 0, 0, 0]);
+  },[])
+
   return(
     <div className = "Background">
       <div className="Home">

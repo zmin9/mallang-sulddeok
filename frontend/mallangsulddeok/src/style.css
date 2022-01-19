@@ -56,6 +56,7 @@
     padding:10px;
     height:100px;
     text-align: left;
+    cursor: pointer;
 }
 
 .Answer2 {
@@ -64,4 +65,5 @@
     padding:10px;
     height:100px;
     text-align: right;
+    cursor: pointer;
 }
