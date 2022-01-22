@@ -14,8 +14,7 @@ const Main = ({setPage, userValue, setUserValue}) => {
     const [selected, setSelected] = useState(-1);
     
     const onClickAnswer = (e) => {
-        
-        if(e.target.className === 'Answer1'){
+        if(e.target.className === 'A1'){
             userAnswer = 0;
             setSelected(0);
         }
@@ -31,8 +30,8 @@ const Main = ({setPage, userValue, setUserValue}) => {
         console.log(testScript.test[index]["score"][userAnswer]);
         console.log(temp);
         */
-
         setUserValue(temp);
+
         timer = setTimeout(()=>{
             // 질문 넘기기
             (index < Qnum ? setIndex(index + 1) : setPage(2))
@@ -42,8 +41,8 @@ const Main = ({setPage, userValue, setUserValue}) => {
     }
 
     useEffect(() => {
-        return clearTimeout(timer);
-    });
+        return () => clearTimeout(timer);
+    },[]);
 
 
     return (
@@ -53,11 +52,13 @@ const Main = ({setPage, userValue, setUserValue}) => {
                 <div className="Question">
                     {testScript.test[index].question}
                 </div>
-                <div className='Answer1' onClick={userAnswer === -1 ? onClickAnswer : null} style={ selected === 0 ? selectedStyle : null }>
-                    {testScript.test[index].answer[0]}
-                </div>
-                <div className='Answer2' onClick={userAnswer === -1 ? onClickAnswer : null} style={ selected === 1 ? selectedStyle : null }>
-                    {testScript.test[index].answer[1]}
+                <div className='Answer'>
+                    <div className='A1' onClick={selected === -1 ? onClickAnswer : null} style={ selected === 0 ? selectedStyle : null }>
+                        {testScript.test[index].answer[0]}
+                    </div>
+                    <div className='A2' onClick={selected === -1 ? onClickAnswer : null} style={ selected === 1 ? selectedStyle : null }>
+                        {testScript.test[index].answer[1]}
+                    </div>
                 </div>
                 <div style={{textAlign:"center",fontWeight:"bold"}}>{index + 1}/{Qnum + 1}<br/></div>
             </div>
