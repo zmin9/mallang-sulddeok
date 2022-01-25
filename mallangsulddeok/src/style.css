@@ -28,28 +28,46 @@
 /*********** Main ***********/
 
 .Main {
-    background: rgb(219, 185, 121);
+    /*background: rgb(219, 185, 121);*/
+    background-image: url(./images/background.PNG);
+    background-position: 50%;
+    background-size: 540px 732px;
 
     width: 540px;
+    height: 730px;
     /*width: 95vw;*/
     position: absolute;
-    margin-top: 50px;
     right: 50%;
     left: 50%;
     transform: translate(-50% ,0); /*(가로, 세로)*/
+
+    margin-top: 50px;
+    padding-top: 10px;
+
+    text-align: center;
 }
 
+.Background_line {
+    display: inline-block;
+    width: 500px;
+    height: 10px;
+}
+
+
 .Question {
-    background: beige;
-    margin:20px;
-    padding:10px;
-    height: 300px;
+    font-size: 16pt;
+    font-weight: bold;
+    text-align: center;
+    margin:50px;
+    margin-bottom: -20px;
+    
+    height:190px;
 }
 
 .A1 {
-    background: beige;
-    margin:20px;
-    padding:10px;
+    
+    margin:50px;
+    margin-bottom: -30px;
     height:100px;
 
     text-align: left;
@@ -57,17 +75,11 @@
 }
 
 .A2 {
-    background: beige;
-    margin:20px;
-    padding:10px;
+    margin:50px;
     height:100px;
 
     text-align: right;
     cursor: pointer;
-}
-
-.Answer {
-    display: block;
 }
 
 
@@ -100,6 +112,10 @@
 
     .Result{
         width: 95vw;
+    }
+
+    .Background_line {
+        width: 90vw;
     }
 }
 

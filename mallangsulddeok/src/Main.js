@@ -1,5 +1,8 @@
 import { useEffect, useState } from 'react';
-import testScript from './question.json'
+import testScript from './question.json';
+
+import Image_line from './images/background_line.png';
+
 
 const Main = ({setPage, userValue, setUserValue}) => {
     let Qnum = 11;
@@ -25,11 +28,6 @@ const Main = ({setPage, userValue, setUserValue}) => {
 
         const temp = [...userValue];
         temp[testScript.test[index].type] += testScript.test[index]["score"][userAnswer];
-        /*
-        console.log(userAnswer);
-        console.log(testScript.test[index]["score"][userAnswer]);
-        console.log(temp);
-        */
         setUserValue(temp);
 
         timer = setTimeout(()=>{
@@ -48,10 +46,17 @@ const Main = ({setPage, userValue, setUserValue}) => {
     return (
         <div className="Background">
             <div className="Main">
-                여긴 메인<br/>
+                <p style={{fontSize:'30px', fontWeight:'bold'}}>
+                    <br/>
+                    「Mallang Bar」
+                </p>
                 <div className="Question">
-                    {testScript.test[index].question}
+                    {testScript.test[index].question.map((sentence, i)=>{
+                        // 줄바꿈 때문에 이렇게 해둠...
+                        return <span key={i}>{sentence}<br/></span>
+                    })}
                 </div>
+                <img className='Background_line' src={Image_line} alt=''/>
                 <div className='Answer'>
                     <div className='A1' onClick={selected === -1 ? onClickAnswer : null} style={ selected === 0 ? selectedStyle : null }>
                         {testScript.test[index].answer[0]}

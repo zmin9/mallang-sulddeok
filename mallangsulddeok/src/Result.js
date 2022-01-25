@@ -12,7 +12,7 @@ const Result = ({setPage, userValue}) => {
                 <div 
                     onClick={()=>setPage(0)}
                     style={{cursor:"pointer"}}>
-                    돌아가고싶다면 누르시오
+                    다시 검사하기
                 </div>
             </div>
         </div>
