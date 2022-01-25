@@ -8,7 +8,13 @@ const Home = ({setPage, setUserValue}) => {
   return(
     <div className = "Background">
       <div className="Home">
-        <button> 공유 </button>
+      <div 
+          onClick={()=>setPage(3)}
+          style={{cursor:"pointer"}}
+          >
+          공유하기
+        </div>
+        
         <br/>Home<br/>
         <div 
           onClick={()=>setPage(1)}
