@@ -3,6 +3,7 @@ import './style.css';
 import Home from "./Home";
 import Main from "./Main";
 import Result from "./Result";
+import social_share from "./social_share";
 
 
 const App = () => {
@@ -12,7 +13,8 @@ const App = () => {
     return(
         (page === 0 ? <Home setPage={setPage} setUserValue={setUserValue}/> : 
             (page === 1 ? <Main setPage={setPage} userValue={userValue} setUserValue={setUserValue}/>:
-                (page === 2 ? <Result setPage={setPage} userValue={userValue}/> : null)))
+                (page === 2 ? <Result setPage={setPage} userValue={userValue}/> : 
+                    page === 3 ? <social_share setPage={setPage}/> : null)))
     )
 }
 

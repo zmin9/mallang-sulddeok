@@ -1,5 +1,4 @@
 import { useEffect } from "react";
-import social_share from "./social_share";
 
 const Home = ({setPage, setUserValue}) => {
   useEffect(()=>{
@@ -24,7 +23,6 @@ const Home = ({setPage, setUserValue}) => {
           >
           입장하기
         </div>
-        <social_share/>
       </div>
     </div>
   );
