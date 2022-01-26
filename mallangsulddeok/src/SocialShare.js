@@ -41,7 +41,7 @@ const URLShareButton = styled.button`
 	}
 `;
 
-function social_share() {
+function SocialShare() {
     // window 객체에서 현재 url 가져오기
       const currentUrl = window.location.href;
       return (
@@ -63,5 +63,5 @@ function social_share() {
       );
   }
   
-  export default social_share;
+  export default SocialShare;
   

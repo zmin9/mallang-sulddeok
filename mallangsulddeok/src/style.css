@@ -45,6 +45,7 @@
     padding-top: 10px;
 
     text-align: center;
+    word-break: keep-all;
 }
 
 .Background_line {
@@ -55,29 +56,38 @@
 
 
 .Question {
-    font-size: 16pt;
+    font-size: 17pt;
     font-weight: bold;
     text-align: center;
-    margin:50px;
-    margin-bottom: -20px;
     
-    height:190px;
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-bottom: 30px;
+    
+    height:170px;
 }
 
 .A1 {
+    height:110px;
     
-    margin:50px;
-    margin-bottom: -30px;
-    height:100px;
+    margin-left:50px;
+    margin-right:50px;
+    margin-top: 30px;
 
+    font-size: 14pt;
     text-align: left;
     cursor: pointer;
 }
 
 .A2 {
-    margin:50px;
-    height:100px;
+    height:110px;
 
+    margin-left:50px;
+    margin-right:50px;
+    margin-top: 30px;
+    margin-bottom: 10px;
+
+    font-size: 14pt;
     text-align: right;
     cursor: pointer;
 }

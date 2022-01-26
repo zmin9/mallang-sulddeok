@@ -42,6 +42,15 @@ const Main = ({setPage, userValue, setUserValue}) => {
         return () => clearTimeout(timer);
     },[]);
 
+    const printHyphen=(length)=>{
+        let s="";
+        for(let i = 0; i < 22 - length; i++)
+        {
+            s=s+"-"
+        }
+        return s;
+    }
+
 
     return (
         <div className="Background">
@@ -57,13 +66,19 @@ const Main = ({setPage, userValue, setUserValue}) => {
                     })}
                 </div>
                 <img className='Background_line' src={Image_line} alt=''/>
-                <div className='Answer'>
-                    <div className='A1' onClick={selected === -1 ? onClickAnswer : null} style={ selected === 0 ? selectedStyle : null }>
+                <div className='A1' onClick={selected === -1 ? onClickAnswer : null} style={ selected === 0 ? selectedStyle : null }>
+                    <span style={{fontSize:'16pt',fontWeight:'bold', pointerEvents:'none'}}>
                         {testScript.test[index].answer[0]}
-                    </div>
-                    <div className='A2' onClick={selected === -1 ? onClickAnswer : null} style={ selected === 1 ? selectedStyle : null }>
-                        {testScript.test[index].answer[1]}
-                    </div>
+                    </span>
+                    {" "+printHyphen(testScript.test[index].answer[0].length)}
+                    <br/>{testScript.test[index].answer[1]}
+                </div>
+                <div className='A2' onClick={selected === -1 ? onClickAnswer : null} style={ selected === 1 ? selectedStyle : null }>
+                    {printHyphen(testScript.test[index].answer[2].length)+" "}
+                    <span style={{fontSize:'16pt',fontWeight:'bold', pointerEvents:'none', wordBreak:'break-all'}}>
+                        {testScript.test[index].answer[2]}
+                    </span>
+                    <br/>{testScript.test[index].answer[3]}
                 </div>
                 <div style={{textAlign:"center",fontWeight:"bold"}}>{index + 1}/{Qnum + 1}<br/></div>
             </div>
