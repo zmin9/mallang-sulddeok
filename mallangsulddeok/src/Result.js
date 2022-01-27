@@ -1,13 +1,28 @@
 const Result = ({setPage, userValue}) => {
 
     return (
-        <div className="Background">
-            <div className="Result">
-                여긴 결과
+        <div className="background">
+            <div className="result">
+                <div className="result-drink">
+                    술이름 {userValue}
+                </div>
                 <div>
-                    <br/>
-                    검사결과는 {userValue}입니다.
-                    <br/>
+                    술 사진
+                </div>
+                <div>
+                    술 특징
+                </div>
+                <div>
+                    성격 특징
+                </div>
+                <div>
+                    궁합술추천
+                    <div>
+                        술1
+                    </div>
+                    <div>
+                        술2
+                    </div>
                 </div>
                 <div 
                     onClick={()=>setPage(0)}

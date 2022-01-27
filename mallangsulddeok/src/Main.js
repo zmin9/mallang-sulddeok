@@ -17,7 +17,7 @@ const Main = ({setPage, userValue, setUserValue}) => {
     const [selected, setSelected] = useState(-1);
     
     const onClickAnswer = (e) => {
-        if(e.target.className === 'A1'){
+        if(e.target.className === 'a1'){
             userAnswer = 0;
             setSelected(0);
         }
@@ -44,39 +44,37 @@ const Main = ({setPage, userValue, setUserValue}) => {
 
     const printHyphen=(length)=>{
         let s="";
-        for(let i = 0; i < 22 - length; i++)
+        for(let i = 0; i < 10 - length; i++)
         {
-            s=s+"-"
+            s=s+"─"
         }
         return s;
     }
 
 
     return (
-        <div className="Background">
-            <div className="Main">
+        <div className="background">
+            <div className="main">
                 <p style={{fontSize:'30px', fontWeight:'bold'}}>
                     <br/>
                     「Mallang Bar」
                 </p>
-                <div className="Question">
+                <div className="question">
                     {testScript.test[index].question.map((sentence, i)=>{
                         // 줄바꿈 때문에 이렇게 해둠...
                         return <span key={i}>{sentence}<br/></span>
                     })}
                 </div>
-                <img className='Background_line' src={Image_line} alt=''/>
-                <div className='A1' onClick={selected === -1 ? onClickAnswer : null} style={ selected === 0 ? selectedStyle : null }>
+                <div className='background-line'></div>
+                <div className='a1' onClick={selected === -1 ? onClickAnswer : null} style={ selected === 0 ? selectedStyle : null }>
                     <span style={{fontSize:'16pt',fontWeight:'bold', pointerEvents:'none'}}>
-                        {testScript.test[index].answer[0]}
+                        {testScript.test[index].answer[0]+" "+printHyphen(testScript.test[index].answer[0].length)+" 19.0"}
                     </span>
-                    {" "+printHyphen(testScript.test[index].answer[0].length)}
                     <br/>{testScript.test[index].answer[1]}
                 </div>
-                <div className='A2' onClick={selected === -1 ? onClickAnswer : null} style={ selected === 1 ? selectedStyle : null }>
-                    {printHyphen(testScript.test[index].answer[2].length)+" "}
+                <div className='a2' onClick={selected === -1 ? onClickAnswer : null} style={ selected === 1 ? selectedStyle : null }>
                     <span style={{fontSize:'16pt',fontWeight:'bold', pointerEvents:'none', wordBreak:'break-all'}}>
-                        {testScript.test[index].answer[2]}
+                        {"9.3 ─"+printHyphen(testScript.test[index].answer[2].length)+" "+testScript.test[index].answer[2]}
                     </span>
                     <br/>{testScript.test[index].answer[3]}
                 </div>

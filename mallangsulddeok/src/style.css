@@ -1,17 +1,17 @@
-.Background {
-    /* background full screen */
+.background {
+    /*background full screen*/
     width: 100vw;
     height: 100vh;
-    margin:-8px;
+    margin:-8px; 
 
-    background: #1f170b;
+    background-color: #1f170b;
     position: relative;
     font-family: 'NanumSquareRound';
 }
 
 /*********** Home ***********/
 
-.Home {
+.home {
     color: aliceblue;
 
     width: 540px;
@@ -24,13 +24,23 @@
     text-align: center;
 }
 
+.group-image{
+    background-image: url(./images/drink_group.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+
+    width: 95%;
+    height: 400px;
+}
+
 
 /*********** Main ***********/
 
-.Main {
+.main {
     /*background: rgb(219, 185, 121);*/
-    background-image: url(./images/background.PNG);
-    background-position: 50%;
+    background-image: url(./images/background.png);
+    background-position: center;
     background-size: 540px 732px;
 
     width: 540px;
@@ -41,21 +51,24 @@
     left: 50%;
     transform: translate(-50% ,0); /*(가로, 세로)*/
 
-    margin-top: 50px;
+    /*margin-top: 10px;*/
     padding-top: 10px;
 
     text-align: center;
     word-break: keep-all;
 }
 
-.Background_line {
-    display: inline-block;
-    width: 500px;
+.background-line {
+    background-image: url(./images/background_line.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 500px 10px;
+    width: 540px;
     height: 10px;
 }
 
 
-.Question {
+.question {
     font-size: 17pt;
     font-weight: bold;
     text-align: center;
@@ -67,7 +80,7 @@
     height:170px;
 }
 
-.A1 {
+.a1 {
     height:110px;
     
     margin-left:50px;
@@ -79,7 +92,7 @@
     cursor: pointer;
 }
 
-.A2 {
+.a2 {
     height:110px;
 
     margin-left:50px;
@@ -96,7 +109,7 @@
 
 /*********** Result ***********/
 
-.Result {
+.result {
     background: rgb(219, 185, 121);
 
     width: 540px;
@@ -112,19 +125,21 @@
 
 /*for moblie*/
 @media screen and (max-width:567px) {
-    .Home{
+    .home{
         width: 95vw;
     }
 
-    .Main{
+    .main{
         width: 95vw;
     }
 
-    .Result{
+
+    .result{
         width: 95vw;
     }
 
-    .Background_line {
+    .background-line {
+        background-size: 90vw 10px;
         width: 90vw;
     }
 }

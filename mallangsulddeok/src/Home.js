@@ -6,8 +6,8 @@ const Home = ({setPage, setUserValue}) => {
   },[]);
 
   return(
-    <div className = "Background">
-      <div className="Home">
+    <div className="background">
+      <div className="home">
         <div 
           onClick={()=>setPage(3)}
           style={{cursor:"pointer"}}
@@ -17,6 +17,7 @@ const Home = ({setPage, setUserValue}) => {
         <p style={{fontSize:'30px', fontWeight:'bold', textAlign:'center'}}>
                     Mallang Bar
                 </p>
+        <div className="group-image"></div>
         <div 
           onClick={()=>setPage(1)}
           style={{cursor:"pointer"}}
