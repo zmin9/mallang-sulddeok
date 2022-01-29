@@ -14,15 +14,15 @@ const Home = ({setPage, setUserValue}) => {
           >
           공유하기
         </div>
-        <p style={{fontSize:'30px', fontWeight:'bold', textAlign:'center'}}>
-                    Mallang Bar
+        <p style={{letterSpacing:'-2pt', fontSize:'30px', fontWeight:'bold', textAlign:'center'}}>
+                    나와 어울리는 술 찾기
                 </p>
         <div className="group-image"></div>
         <div 
           onClick={()=>setPage(1)}
-          style={{cursor:"pointer"}}
+          style={{cursor:"pointer",letterSpacing:'-1pt', fontSize:"15pt"}}
           >
-          입장하기
+          ― 입장하기 →
         </div>
       </div>
     </div>
