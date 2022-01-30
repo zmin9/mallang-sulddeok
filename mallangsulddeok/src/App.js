@@ -6,6 +6,7 @@ import Result from "./Result";
 import SocialShare from "./SocialShare";
 
 
+
 const App = () => {
     const [page, setPage] = useState(0);
     const [userValue, setUserValue] = useState([0, 0, 0, 0]);
