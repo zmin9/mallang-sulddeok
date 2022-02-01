@@ -69,13 +69,13 @@
 
 
 .question {
-    font-size: 17pt;
+    font-size: 15pt;
     font-weight: bold;
     text-align: center;
     
     margin-left: 50px;
     margin-right: 50px;
-    margin-bottom: 30px;
+    margin-bottom: 10px;
     letter-spacing:-1pt;
     
     height:170px;
@@ -86,9 +86,9 @@
     
     margin-left:50px;
     margin-right:50px;
-    margin-top: 30px;
+    margin-top: 20px;
 
-    font-size: 14pt;
+    font-size: 11pt;
     letter-spacing:-1pt;
     text-align: left;
     cursor: pointer;
@@ -99,10 +99,10 @@
 
     margin-left:50px;
     margin-right:50px;
-    margin-top: 30px;
+    margin-top: 20px;
     margin-bottom: 10px;
 
-    font-size: 14pt;
+    font-size: 11pt;
     letter-spacing:-1pt;
     text-align: right;
     cursor: pointer;
