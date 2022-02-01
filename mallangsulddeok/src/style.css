@@ -4,6 +4,9 @@
     height: 100vh;
     margin:-8px; 
 
+    /*for kakao adfit*/
+    padding-bottom: 80px;
+
     background-color: #1f170b;
     position: relative;
     font-family: 'NanumSquareRound';
@@ -127,6 +130,15 @@
 }
 
 
+/*********** Kakao adfit ***********/
+.adfit {
+    position: fixed;
+    bottom : -10px;
+    left: 0;
+    right: 0;
+}
+
+
 
 /*for moblie*/
 @media screen and (max-width:567px) {
@@ -147,6 +159,7 @@
         background-size: 90vw 10px;
         width: 90vw;
     }
+
 }
 
 

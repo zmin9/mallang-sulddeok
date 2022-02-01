@@ -6,7 +6,6 @@ const Home = ({setPage, setUserValue}) => {
   },[]);
 
   return(
-    <div className="background">
       <div className="home">
         <div 
           onClick={()=>setPage(3)}
@@ -25,7 +24,6 @@ const Home = ({setPage, setUserValue}) => {
           ― 입장하기 →
         </div>
       </div>
-    </div>
   );
 }
 export default Home;
