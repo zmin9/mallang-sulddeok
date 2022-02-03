@@ -1,22 +1,21 @@
 .background {
     /*background full screen*/
     width: 100vw;
-    height: 100vh;
+    height: 70vh;
+    padding-bottom: 30vh;
     margin:-8px; 
+    overflow: auto;
 
     /*for kakao adfit*/
-    padding-bottom: 80px;
 
+    
     background-color: #1f170b;
     position: relative;
-    font-family: 'NanumSquareRound';
+    font-family: 'NanumSquareRoundB';
 }
 
 /*********** Home ***********/
-
 .home {
-    color: aliceblue;
-
     width: 540px;
     /*width: 95vw;*/
     position: absolute;
@@ -25,6 +24,14 @@
     left: 50%;
     transform: translate(-50% ,0); /*(가로, 세로)*/
     text-align: center;
+    border-bottom: 100px solid #1f170b;
+}
+
+.title{
+    color: whitesmoke;
+    letter-spacing:-1pt;
+    font-size: 180%;
+    padding:5%
 }
 
 .group-image{
@@ -33,8 +40,25 @@
     background-repeat: no-repeat;
     background-size: contain;
 
+    margin-bottom: 5%;
+
     width: 100%;
     height: 400px;
+}
+
+.start-btn {
+    background-color: antiquewhite;
+
+    cursor:pointer;
+    letter-spacing:-1pt;
+    font-size:120%;
+    
+    display: inline;
+    padding: 3%;
+    padding-left: 8%;
+    padding-right: 8%;
+
+    border-radius: 20px;
 }
 
 
@@ -56,6 +80,7 @@
 
     /*margin-top: 10px;*/
     padding-top: 10px;
+    border-bottom: 80px solid #1f170b;
 
     text-align: center;
     word-break: keep-all;
@@ -118,17 +143,96 @@
 .result {
     background: rgb(219, 185, 121);
 
-    letter-spacing:-2pt;
+    letter-spacing:-1pt;
 
     width: 540px;
     /*width: 95vw;*/
     position: absolute;
-    margin-top: 50px;
+    margin-top: 10px;
+    border-bottom: 100px solid #1f170b;
+    
     right: 50%;
     left: 50%;
     transform: translate(-50% ,0); /*(가로, 세로)*/
+
+    text-align: center;
+    word-break: keep-all;
 }
 
+.drink-name {
+    font-family: 'NanumSquareRoundB';
+    font-size: 170%;
+    font-weight: bold;
+
+    margin-top: 10%;
+}
+
+.drink-characteristic {
+    text-align: left;
+    border: 1px dotted #1f170b;
+    margin: 5%;
+    padding: 3.5%;
+
+}
+
+.drink-characteristic-item {
+    margin:1.5%;
+}
+
+
+.human-character {
+    text-align: left;
+    border: 1px dotted #1f170b;
+    margin: 5%;
+    padding: 3.5%;
+}
+
+.human-character-item {
+    margin:1.5%;
+    cursor: pointer;
+}
+
+.relation-drink-cover {
+    clear: both;
+    width: 100%;
+    margin: 5%;
+    
+}
+
+.relation-drink {
+    width: 36%;
+    float: left;
+    border: 1px dotted #1f170b;
+    padding: 3%;
+
+    margin-bottom: 5%;
+}
+
+
+.share-btn {
+    clear: both;
+    color: aliceblue;
+    background-color: #7e581f;
+    font-size: 130%;
+    margin: 5%;
+    padding: 5%;
+
+    cursor: pointer;
+
+    border-radius: 20px;
+}
+
+.retry-btn {
+    clear: both;
+    background-color: beige;
+    font-size: 130%;
+    margin: 5%;
+    padding: 5%;
+
+    cursor: pointer;
+
+    border-radius: 20px;
+}
 
 /*********** Kakao adfit ***********/
 .adfit {
@@ -167,4 +271,14 @@
 @font-face {
     font-family: 'NanumSquareRound';
     src: url('./fonts/NanumSquareRoundR.ttf');
+}
+
+@font-face {
+    font-family: 'NanumSquareRoundEB';
+    src: url('./fonts/NanumSquareRoundEB.ttf');
+}
+
+@font-face {
+    font-family: 'NanumSquareRoundB';
+    src: url('./fonts/NanumSquareRoundB.ttf');
 }

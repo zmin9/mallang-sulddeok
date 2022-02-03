@@ -54,8 +54,23 @@ const KakaoIcon = styled.img`
 	border-radius: 24px;
 `;
 
+const BackBtn = styled.div`
 
-function SocialShare() {
+	cursor: pointer;
+	color: aliceblue;
+	background-color: #7e581f;
+	
+	padding: 2%;
+	padding-left: 5%;
+	padding-right: 5%;
+
+	border-radius: 20px;
+
+	border-radius:20px
+`;
+
+
+function SocialShare({setPage}) {
     // window 객체에서 현재 url 가져오기
       const currentUrl = window.location.href;
 	  //kakao SDK import 하기
@@ -82,7 +97,7 @@ function SocialShare() {
 
       return (
           <FlexContainer>
-              <h1>공유하기</h1>
+              <h1 style={{color:'whitesmoke', marginTop:"5%"}}>공유하기</h1>
               <GridContainer>
                   <FacebookShareButton url={currentUrl}>
                       <FacebookIcon size={48} round={true} borderRadius={24}></FacebookIcon>
@@ -97,6 +112,7 @@ function SocialShare() {
 					<KakaoIcon src={kakaoLogo}></KakaoIcon>
 				</KakaoShareButton>
               </GridContainer>
+			  <BackBtn onClick={()=>setPage(2)}>닫기</BackBtn>
           </FlexContainer>
       );
   }
