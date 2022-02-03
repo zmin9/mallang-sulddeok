@@ -63,13 +63,14 @@ const Main = ({setPage, userValue, setUserValue}) => {
             <div className='background-line'></div>
             <div className='a1' onClick={selected === -1 ? onClickAnswer : null} style={ selected === 0 ? selectedStyle : null }>
                 <span style={{fontSize:'14pt',fontWeight:'bold', pointerEvents:'none'}}>
-                    {testScript.test[index].answer[0]+" "+printHyphen(testScript.test[index].answer[0].length)+" 19.0"}
+                    {testScript.test[index].answer[0]+" "+printHyphen(testScript.test[index].answer[0].length)+" "}
                 </span>
-                <br/>{testScript.test[index].answer[1]}
+                \19,000<br/>{testScript.test[index].answer[1]}
             </div>
             <div className='a2' onClick={selected === -1 ? onClickAnswer : null} style={ selected === 1 ? selectedStyle : null }>
+                \9,300
                 <span style={{fontSize:'14pt',fontWeight:'bold', pointerEvents:'none', wordBreak:'break-all'}}>
-                    {"9.3 ─"+printHyphen(testScript.test[index].answer[2].length)+" "+testScript.test[index].answer[2]}
+                    {" "+printHyphen(testScript.test[index].answer[2].length)+" "+testScript.test[index].answer[2]}
                 </span>
                 <br/>{testScript.test[index].answer[3]}
             </div>
