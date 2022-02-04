@@ -1,13 +1,25 @@
 import resultScript from './characteristic.json';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
+
+const Character = ({idx, item, onClickCharacter, isSelected}) => {
+    return(
+        <div className={isSelected? 'human-character-item-true':'human-character-item-false'}
+            onClick={()=>{onClickCharacter(idx)}}
+        >
+            - {item}
+        </div>
+    )
+}
 
 const Result = ({setPage, userValue}) => {
     
-    let resultIndex = parseInt(userValue[0]/2)*8+parseInt(userValue[1]/2)*4+parseInt(userValue[2]/2)*2+parseInt(userValue[3]/2)*1;
-    let resultDrink = resultScript.characteristic[resultIndex];
-    let drinkImage = "/drinkImages/"+resultDrink.drinkName+".png";
-    let goodImage = "/drinkImages/"+resultDrink.goodMatching+".png";
-    let badImage = "/drinkImages/"+resultDrink.badMatching+".png";
+    const resultIndex = parseInt(userValue[0]/2)*8+parseInt(userValue[1]/2)*4+parseInt(userValue[2]/2)*2+parseInt(userValue[3]/2)*1;
+    const resultDrink = resultScript.characteristic[resultIndex];
+    const drinkImage = "/drinkImages/"+resultDrink.drinkName+".png";
+    const goodImage = "/drinkImages/"+resultDrink.goodMatching+".png";
+    const badImage = "/drinkImages/"+resultDrink.badMatching+".png";
+
+    const [isSelected, setIsSelected] = useState(Array(resultDrink.character.length).fill(false));
 
     useEffect(() => {
         let ins = document.createElement('ins');
@@ -26,6 +38,17 @@ const Result = ({setPage, userValue}) => {
         document.querySelector('.adfit-result').appendChild(scr);
     },[]);
 
+    const onClickCharacter = (idx) => {
+        const tempArr = [...isSelected];
+        if(tempArr[idx]){
+            tempArr[idx] = false;
+        }
+        else{
+            tempArr[idx] = true;
+        }
+        setIsSelected(tempArr);
+    }
+
     return (
         <div className="result">
             <div className='drink-name'>
@@ -39,16 +62,16 @@ const Result = ({setPage, userValue}) => {
             #술 특징
             </div>
             <div className='drink-characteristic'>
-                {resultDrink.drinkCharacteristic.map((ex, key)=>{
-                    return <div key={key} className='drink-characteristic-item'>{"- "+ex}<br/></div>
+                {resultDrink.drinkCharacteristic.map((ex, index)=>{
+                    return <div key={index} className='drink-characteristic-item'>{"- "+ex}<br/></div>
                 })}
             </div>
-            <div className='tape-title'>
+            <div className='tape-title' onClick={()=>{console.log('누름')}}>
             #{resultDrink.drinkName}같은 당신의 성격
             </div>
             <div className='human-character'>
-                {resultDrink.character.map((ex, key)=>{
-                    return <div key={key} className='human-character-item'>{"- "+ex}<br/></div>
+                {resultDrink.character.map((ex, index)=>{
+                    return <Character key={index} idx={index} item={ex} onClickCharacter={onClickCharacter} isSelected={isSelected[index]}/>
                 })}
             </div>
             <div className='relation-drink-cover'>

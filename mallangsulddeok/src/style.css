@@ -206,8 +206,19 @@
     padding-top: 7%;
 }
 
-.human-character-item {
+.human-character-item-false {
+    margin:1.5%;    
+    
+    cursor: pointer;
+}
+
+.human-character-item-true {
     margin:1.5%;
+    border-radius: 5px;
+    
+    background-color: #ffe46e;
+    font-weight: bold;
+    letter-spacing: -1.7pt;
     cursor: pointer;
 }
 
