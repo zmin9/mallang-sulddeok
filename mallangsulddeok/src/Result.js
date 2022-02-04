@@ -19,8 +19,8 @@ const Result = ({setPage, userValue}) => {
         scr.type = "text/javascript";
         scr.src = "//t1.daumcdn.net/kas/static/ba.min.js";
         ins.setAttribute('data-ad-width', '320');
-        ins.setAttribute('data-ad-height', '80');
-        ins.setAttribute('data-ad-unit', 'DAN-pTbfs6eBezPIhuo0');
+        ins.setAttribute('data-ad-height', '100');
+        ins.setAttribute('data-ad-unit', 'DAN-E5oPmTbcMBZdjVG4');
 
         document.querySelector('.adfit-result').appendChild(ins);
         document.querySelector('.adfit-result').appendChild(scr);
@@ -29,6 +29,7 @@ const Result = ({setPage, userValue}) => {
     return (
         <div className="result">
             <div className='drink-name'>
+                <div style={{fontFamily:'NanumSquareRoundR', fontSize:'60%', letterSpacing:'-1pt'}}>당신의 술은...</div>
                 {resultDrink.drinkName}
             </div>
             <div className='drink-graphic'>
