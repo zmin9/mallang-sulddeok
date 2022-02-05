@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import './style.css';
 import Home from "./Home";
 import Main from "./Main";
@@ -10,8 +10,6 @@ import SocialShare from "./SocialShare";
 const App = () => {
     const [page, setPage] = useState(0);
     const [userValue, setUserValue] = useState([0, 0, 0, 0]);
-
-    /* kakao adfit */
     
 
     return(

@@ -1,5 +1,7 @@
 import resultScript from './characteristic.json';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
+import domtoimage from 'dom-to-image';
+import { saveAs } from 'file-saver';
 
 const Character = ({idx, item, onClickCharacter, isSelected}) => {
     return(
@@ -20,7 +22,9 @@ const Result = ({setPage, userValue}) => {
     const badImage = "/drinkImages/"+resultDrink.badMatching+".png";
 
     const [isSelected, setIsSelected] = useState(Array(resultDrink.character.length).fill(false));
+    const cardRef = useRef();
 
+    /* kakao adfit */
     useEffect(() => {
         let ins = document.createElement('ins');
         let scr = document.createElement('script');
@@ -47,45 +51,64 @@ const Result = ({setPage, userValue}) => {
             tempArr[idx] = true;
         }
         setIsSelected(tempArr);
-    }
+    };
+
+    const onDownloadBtn = () => {
+        const card = cardRef.current;
+        domtoimage
+            .toBlob(card)
+            .then(()=>{
+                domtoimage
+                .toBlob(card)
+                .then((blob) => {
+                saveAs(blob, 'result.png');
+            });
+            })
+
+        
+    };
 
     return (
         <div className="result">
-            <div className='drink-name'>
-                <div style={{fontFamily:'NanumSquareRoundR', fontSize:'60%', letterSpacing:'-1pt'}}>당신의 술은...</div>
-                {resultDrink.drinkName}
-            </div>
-            <div className='drink-graphic'>
-                <img src={drinkImage} alt={resultDrink.drinkName} style={{width:"50%"}}/><br/>
-            </div>
-            <div className='tape-title'>
-            #술 특징
-            </div>
-            <div className='drink-characteristic'>
-                {resultDrink.drinkCharacteristic.map((ex, index)=>{
-                    return <div key={index} className='drink-characteristic-item'>{"- "+ex}<br/></div>
-                })}
-            </div>
-            <div className='tape-title' onClick={()=>{console.log('누름')}}>
-            #{resultDrink.drinkName}같은 당신의 성격
-            </div>
-            <div className='human-character'>
-                {resultDrink.character.map((ex, index)=>{
-                    return <Character key={index} idx={index} item={ex} onClickCharacter={onClickCharacter} isSelected={isSelected[index]}/>
-                })}
-            </div>
-            <div className='relation-drink-cover'>
-                <div className='relation-drink' style={{marginRight:"2.5%"}}>
-                    잘 어울리는 술<br/>
-                    <img src={goodImage} alt={resultDrink.drinkName} style={{width:"70%"}}/><br/>
-                    <div>{resultDrink.goodMatching}</div>
+            <div ref={cardRef} className='png-card'>
+                <div className='drink-name'>
+                    <div style={{fontFamily:'NanumSquareRoundR', fontSize:'60%', letterSpacing:'-1pt'}}>당신의 술은...</div>
+                    {resultDrink.drinkName}
                 </div>
-                <div className='relation-drink' style={{marginLeft:"2.5%"}}>
-                    안 어울리는 술<br/>
-                    <img src={badImage} alt={resultDrink.drinkName} style={{width:"70%"}}/><br/>
-                    <div>{resultDrink.badMatching}</div>
+                <div className='drink-graphic'>
+                    <img src={drinkImage} alt={resultDrink.drinkName} style={{width:"50%"}}/><br/>
+                </div>
+                <div className='tape-title'>
+                #술 특징
+                </div>
+                <div className='drink-characteristic'>
+                    {resultDrink.drinkCharacteristic.map((ex, index)=>{
+                        return <div key={index} className='drink-characteristic-item'>{"- "+ex}<br/></div>
+                    })}
+                </div>
+                <div className='tape-title' onClick={()=>{console.log('누름')}}>
+                #{resultDrink.drinkName}같은 당신의 성격
+                </div>
+                <div className='human-character'>
+                    {resultDrink.character.map((ex, index)=>{
+                        return <Character key={index} idx={index} item={ex} onClickCharacter={onClickCharacter} isSelected={isSelected[index]}/>
+                    })}
+                </div>
+                <div className='relation-drink-cover'>
+                    <div className='relation-drink' style={{marginRight:"2.5%"}}>
+                        잘 어울리는 술<br/>
+                        <img src={goodImage} alt={resultDrink.drinkName} style={{width:"70%"}}/><br/>
+                        <div>{resultDrink.goodMatching}</div>
+                    </div>
+                    <div className='relation-drink' style={{marginLeft:"2.5%"}}>
+                        안 어울리는 술<br/>
+                        <img src={badImage} alt={resultDrink.drinkName} style={{width:"70%"}}/><br/>
+                        <div>{resultDrink.badMatching}</div>
+                    </div>
                 </div>
             </div>
+            <div>공감되는 특징을 꾹👆🏻누르면 하이라이트 표시가 돼요!<br/>이미지로 저장해서 SNS에 공유해봐요!</div>
+            <div className='share-btn' onClick={onDownloadBtn}>이미지로 저장하기</div>
             <div className='retry-btn' 
                 onClick={()=>setPage(0)}>
                 다시 검사하기

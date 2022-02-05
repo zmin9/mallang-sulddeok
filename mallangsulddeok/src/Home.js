@@ -30,10 +30,6 @@ const Home = ({setPage, setUserValue}) => {
             <div className='start-btn' onClick={()=>setPage(1)}>
                 ― 입장하기 →
             </div>
-            {/*임시 버튼
-            <div className='start-btn' onClick={()=>{setPage(2);}}>
-                ― 결과페이지 바로이동 →
-            </div> */}
             <div className="adfit-home" style={{width:'100%', marginTop:'100px'}}/>
         </div>
     );
