@@ -9,14 +9,29 @@ import {
 import { CopyToClipboard } from "react-copy-to-clipboard";
 import { useScript } from "./Hooks";
 import { useEffect } from "react";
-import kakaoLogo from "./kakao.png";
+import kakaoLogo from "./images/kakao.png";
 
+const Popup = styled.div`
+	width: 100vw;
+	height: 65vh;
+	padding-top: 35vh;
+	background-color: rgba(0,0,0,0.6);
+	position : fixed;
+	z-index : 1;
+	touch-action : none;
+`
 
 // 제목과 버튼을 감싸는 컨테이너
 const FlexContainer = styled.div`
+	width: 80%;
+	max-width: 300px;
+	margin: auto;
+	border-radius: 30px;
+	background-color: #fffaf0;
+
 	display: flex;
 	flex-direction: column;
-	align-items: center;	
+	align-items: center;
 `;
 
 // 버튼을 배치시키는 컨테이너
@@ -57,7 +72,7 @@ const KakaoIcon = styled.img`
 const BackBtn = styled.div`
 
 	cursor: pointer;
-	color: aliceblue;
+	color: #fffaf0;
 	background-color: #7e581f;
 	
 	padding: 2%;
@@ -66,11 +81,11 @@ const BackBtn = styled.div`
 
 	border-radius: 20px;
 
-	border-radius:20px
+	margin-bottom:	5%;
 `;
 
 
-function SocialShare({setPage}) {
+function SocialShare({setPopupOpen}) {
     // window 객체에서 현재 url 가져오기
       const currentUrl = window.location.href;
 	  //kakao SDK import 하기
@@ -96,24 +111,26 @@ function SocialShare({setPage}) {
 
 
       return (
-          <FlexContainer>
-              <h1 style={{color:'whitesmoke', marginTop:"5%"}}>공유하기</h1>
-              <GridContainer>
-                  <FacebookShareButton url={currentUrl}>
-                      <FacebookIcon size={48} round={true} borderRadius={24}></FacebookIcon>
-                  </FacebookShareButton>
-                  <TwitterShareButton url={currentUrl}>
-                      <TwitterIcon size={48} round={true} borderRadius={24}></TwitterIcon>
-                  </TwitterShareButton>
-                  <CopyToClipboard text={currentUrl}>
-					<URLShareButton>URL</URLShareButton>
-				</CopyToClipboard>
-				<KakaoShareButton onClick={handleKakaoButton}>
-					<KakaoIcon src={kakaoLogo}></KakaoIcon>
-				</KakaoShareButton>
-              </GridContainer>
-			  <BackBtn onClick={()=>setPage(2)}>닫기</BackBtn>
-          </FlexContainer>
+		  <Popup>
+				<FlexContainer>
+					<h2 style={{color:'#1f170b'}}>공유하기</h2>
+					<GridContainer>
+						<FacebookShareButton url={currentUrl}>
+							<FacebookIcon size={48} round={true} borderRadius={24}></FacebookIcon>
+						</FacebookShareButton>
+						<TwitterShareButton url={currentUrl}>
+							<TwitterIcon size={48} round={true} borderRadius={24}></TwitterIcon>
+						</TwitterShareButton>
+						<CopyToClipboard text={currentUrl}>
+							<URLShareButton>URL</URLShareButton>
+						</CopyToClipboard>
+						<KakaoShareButton onClick={handleKakaoButton}>
+							<KakaoIcon src={kakaoLogo}></KakaoIcon>
+						</KakaoShareButton>
+					</GridContainer>
+					<BackBtn onClick={()=>(setPopupOpen(false))}>닫기</BackBtn>
+				</FlexContainer>
+		</Popup>
       );
   }
   

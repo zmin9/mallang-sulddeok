@@ -4,6 +4,7 @@ import domtoimage from 'dom-to-image';
 import { saveAs } from 'file-saver';
 
 import Loading from './Loading';
+import SocialShare from './SocialShare';
 
 const Character = ({idx, item, onClickCharacter, isSelected}) => {
     return(
@@ -24,6 +25,7 @@ const Result = ({setPage, userValue}) => {
     const badImage = "/drinkImages/"+resultDrink.badMatching+".png";
 
     const [loading, setLoading] = useState(true); 
+    const [popupOpen, setPopupOpen] = useState(false);
     const [isSelected, setIsSelected] = useState(Array(resultDrink.character.length).fill(false));
     const cardRef = useRef();
 
@@ -31,7 +33,7 @@ const Result = ({setPage, userValue}) => {
         /* for loading off */
         setTimeout(()=>{
             setLoading(false);
-        }, 2000);
+        }, 3000);
         
         /* kakao adfit */
         let ins = document.createElement('ins');
@@ -81,6 +83,7 @@ const Result = ({setPage, userValue}) => {
     return (
         <>
             { loading ? <Loading text="술 제조 중"/> : null}
+            { popupOpen? <SocialShare setPopupOpen={setPopupOpen}/> : null}
             <div className="result">
             <div ref={cardRef} className='png-card'>
                 <div className='drink-name'>
@@ -126,7 +129,7 @@ const Result = ({setPage, userValue}) => {
                 다시 검사하기
             </div>
             <div className="share-btn"
-                onClick={()=>setPage(3)}>
+                onClick={()=>setPopupOpen(true)}>
                 공유하기
             </div>
             
