@@ -3,6 +3,8 @@ import { useEffect, useState, useRef } from 'react';
 import domtoimage from 'dom-to-image';
 import { saveAs } from 'file-saver';
 
+import Loading from './Loading';
+
 const Character = ({idx, item, onClickCharacter, isSelected}) => {
     return(
         <div className={isSelected? 'human-character-item-true':'human-character-item-false'}
@@ -21,11 +23,17 @@ const Result = ({setPage, userValue}) => {
     const goodImage = "/drinkImages/"+resultDrink.goodMatching+".png";
     const badImage = "/drinkImages/"+resultDrink.badMatching+".png";
 
+    const [loading, setLoading] = useState(true); 
     const [isSelected, setIsSelected] = useState(Array(resultDrink.character.length).fill(false));
     const cardRef = useRef();
 
-    /* kakao adfit */
     useEffect(() => {
+        /* for loading off */
+        setTimeout(()=>{
+            setLoading(false);
+        }, 2000);
+        
+        /* kakao adfit */
         let ins = document.createElement('ins');
         let scr = document.createElement('script');
 
@@ -40,7 +48,9 @@ const Result = ({setPage, userValue}) => {
 
         document.querySelector('.adfit-result').appendChild(ins);
         document.querySelector('.adfit-result').appendChild(scr);
+        
     },[]);
+
 
     const onClickCharacter = (idx) => {
         const tempArr = [...isSelected];
@@ -64,12 +74,14 @@ const Result = ({setPage, userValue}) => {
                 saveAs(blob, 'result.png');
             });
             })
-
-        
     };
 
+    
+
     return (
-        <div className="result">
+        <>
+            { loading ? <Loading text="술 제조 중"/> : null}
+            <div className="result">
             <div ref={cardRef} className='png-card'>
                 <div className='drink-name'>
                     <div style={{fontFamily:'NanumSquareRoundR', fontSize:'60%', letterSpacing:'-1pt'}}>당신의 술은...</div>
@@ -86,7 +98,7 @@ const Result = ({setPage, userValue}) => {
                         return <div key={index} className='drink-characteristic-item'>{"- "+ex}<br/></div>
                     })}
                 </div>
-                <div className='tape-title' onClick={()=>{console.log('누름')}}>
+                <div className='tape-title'>
                 #{resultDrink.drinkName}같은 당신의 성격
                 </div>
                 <div className='human-character'>
@@ -120,6 +132,7 @@ const Result = ({setPage, userValue}) => {
             
             <div className="adfit-result" style={{width:'100%'}}/>
         </div>
+        </>
     )
 }
 

@@ -221,8 +221,6 @@
     border-radius: 5px;
     
     background-color: #ffe46e;
-    font-weight: bold;
-    letter-spacing: -1.7pt;
     cursor: pointer;
 }
 
@@ -259,7 +257,7 @@
 
 .share-btn {
     clear: both;
-    color: aliceblue;
+    color: #f0f8ff;
     background-color: #7e581f;
     font-size: 130%;
     margin: 5%;
@@ -281,6 +279,26 @@
     right: 0;
     background-color: #1f170b;
     border: 2px solid #1f170b;
+}
+
+
+.loading {
+    z-index:100;
+    color: #f0f8ff;
+    background-color:#1f170b;
+    position:fixed;
+    left:50%;
+    right:50%;
+    transform: translate(-50%,0);
+
+    width: 100vw;
+    height: 100vh;
+
+    display: inline;
+    text-align: center;
+    padding-top: 45vh;
+
+    word-break: keep-all;
 }
 
 

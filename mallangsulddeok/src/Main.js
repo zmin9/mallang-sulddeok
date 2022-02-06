@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import testScript from './question.json';
+import Loading from './Loading';
 
 
 const Main = ({setPage, userValue, setUserValue}) => {
@@ -7,10 +8,11 @@ const Main = ({setPage, userValue, setUserValue}) => {
     let timer;
     let userAnswer = -1;
     const selectedStyle = {
-        background:"lightgray",
+        background:'rgba(0,0,0,0.1)',
         cursor:"default"
     }
 
+    const [loading, setLoading] = useState(true); 
     const [index, setIndex] = useState(0);
     const [selected, setSelected] = useState(-1);
     
@@ -38,12 +40,17 @@ const Main = ({setPage, userValue, setUserValue}) => {
     
 
     useEffect(() => {
+        /* for loading off */
+        setTimeout(()=>{
+            setLoading(false);
+        }, 4000);
+
         return () => clearTimeout(timer);
     },[]);
 
     const printHyphen=(length)=>{
         let s="";
-        for(let i = 0; i < 12 - length; i++)
+        for(let i = 0; i < 11 - length; i++)
         {
             s=s+"─"
         }
@@ -52,31 +59,34 @@ const Main = ({setPage, userValue, setUserValue}) => {
 
 
     return (
-        <div className="main">
+        <>
+            { loading ? <Loading text="메뉴판을 읽고 자신에게 알맞은 메뉴를 선택하세요!"/> : null}
+            <div className="main">
             <p style={{fontSize:'30px', fontWeight:'bold'}}>
                 <br/>
                 「Mallang Bar」
             </p>
             <div className="question">
-                {testScript.test[index].question}
+                {testScript.test[index].question}<br/><br/><br/><br/><br/><br/>
             </div>
             <div className='background-line'></div>
             <div className='a1' onClick={selected === -1 ? onClickAnswer : null} style={ selected === 0 ? selectedStyle : null }>
                 <span style={{fontSize:'14pt',fontWeight:'bold', pointerEvents:'none'}}>
                     {testScript.test[index].answer[0]+" "+printHyphen(testScript.test[index].answer[0].length)+" "}
                 </span>
-                \19,000<br/>{testScript.test[index].answer[1]}
+                \19,000
+                <br/>{testScript.test[index].answer[1]}<br/><br/><br/>
             </div>
             <div className='a2' onClick={selected === -1 ? onClickAnswer : null} style={ selected === 1 ? selectedStyle : null }>
                 \9,300
                 <span style={{fontSize:'14pt',fontWeight:'bold', pointerEvents:'none', wordBreak:'break-all'}}>
                     {" "+printHyphen(testScript.test[index].answer[2].length)+" "+testScript.test[index].answer[2]}
                 </span>
-                <br/>{testScript.test[index].answer[3]}
+                <br/>{testScript.test[index].answer[3]}<br/><br/><br/>
             </div>
             <div style={{textAlign:"center",fontWeight:"bold"}}>{index + 1}/{Qnum + 1}<br/></div>
         </div>
-        
+        </>       
     )
 }
 
