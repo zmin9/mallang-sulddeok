@@ -94,19 +94,19 @@ const Result = ({setPage, userValue}) => {
                     <img src={drinkImage} alt={resultDrink.drinkName} style={{width:"50%"}}/><br/>
                 </div>
                 <div className='tape-title'>
-                #술 특징
-                </div>
-                <div className='drink-characteristic'>
-                    {resultDrink.drinkCharacteristic.map((ex, index)=>{
-                        return <div key={index} className='drink-characteristic-item'>{"- "+ex}<br/></div>
-                    })}
-                </div>
-                <div className='tape-title'>
                 #{resultDrink.drinkName}같은 당신의 성격
                 </div>
                 <div className='human-character'>
                     {resultDrink.character.map((ex, index)=>{
                         return <Character key={index} idx={index} item={ex} onClickCharacter={onClickCharacter} isSelected={isSelected[index]}/>
+                    })}
+                </div>
+                <div className='tape-title'>
+                #술 특징
+                </div>
+                <div className='drink-characteristic'>
+                    {resultDrink.drinkCharacteristic.map((ex, index)=>{
+                        return <div key={index} className='drink-characteristic-item'>{"- "+ex}<br/></div>
                     })}
                 </div>
                 <div className='relation-drink-cover'>
@@ -123,14 +123,13 @@ const Result = ({setPage, userValue}) => {
                 </div>
             </div>
             <div>공감되는 특징을 꾹👆🏻누르면 하이라이트 표시가 돼요!<br/>이미지로 저장해서 SNS에 공유해봐요!</div>
-            <div className='share-btn' onClick={onDownloadBtn}>이미지로 저장하기</div>
-            <div className='retry-btn' 
-                onClick={()=>setPage(0)}>
+            <div className='share-btn' onClick={onDownloadBtn}>
+            이미지로 저장하기</div>
+            <div className='retry-btn' onClick={()=>setPage(0)}>
                 다시 검사하기
             </div>
-            <div className="share-btn"
-                onClick={()=>setPopupOpen(true)}>
-                공유하기
+            <div className="share-btn" onClick={()=>setPopupOpen(true)}>
+                테스트 공유하기
             </div>
             
             <div className="adfit-result" style={{width:'100%'}}/>

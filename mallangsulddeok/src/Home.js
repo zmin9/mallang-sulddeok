@@ -24,7 +24,7 @@ const Home = ({setPage, setUserValue}) => {
     return(
         <div className="home">
             <div className='title'>
-                나와 어울리는 술 찾기
+                말랑술떡이 알려주는<br/>🍻당신의 술🍻
             </div>
             <div className="group-image"></div>
             <div className='start-btn' onClick={()=>setPage(1)}>
