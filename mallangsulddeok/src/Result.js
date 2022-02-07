@@ -28,6 +28,9 @@ const Result = ({setPage, userValue}) => {
     const [popupOpen, setPopupOpen] = useState(false);
     const [isSelected, setIsSelected] = useState(Array(resultDrink.character.length).fill(false));
     const cardRef = useRef();
+    const [isLoad, setIsLoad] = useState(false);
+    const [resultImg, setResultImg] = useState(new Image());
+    //let resultImg = new Image();
 
     useEffect(() => {
         /* for loading off */
@@ -71,9 +74,12 @@ const Result = ({setPage, userValue}) => {
             .toBlob(card)
             .then(()=>{
                 domtoimage
-                .toBlob(card)
-                .then((blob) => {
-                saveAs(blob, 'result.png');
+                .toPng(card)
+                .then((dataUrl) => {
+                    const temp = new Image();
+                    temp.src = dataUrl;
+                    temp.onload=()=>setIsLoad(true);
+                    setResultImg(temp);
             });
             })
     };
@@ -125,6 +131,14 @@ const Result = ({setPage, userValue}) => {
             <div>공감되는 특징을 꾹👆🏻누르면 하이라이트 표시가 돼요!<br/>이미지로 저장해서 SNS에 공유해봐요!</div>
             <div className='share-btn' onClick={onDownloadBtn}>
             이미지로 저장하기</div>
+            <div>
+                {isLoad? 
+                    <div className='result-image-container'>
+                        <img src={resultImg.src}  className='result-image' alt=' '/>
+                        👈꾹 눌러 저장하세요!
+                    </div>:null}
+                
+            </div>
             <div className='retry-btn' onClick={()=>setPage(0)}>
                 다시 검사하기
             </div>

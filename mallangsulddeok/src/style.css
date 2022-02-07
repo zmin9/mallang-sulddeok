@@ -243,6 +243,20 @@
     border-radius: 15px;
 }
 
+.result-image-container{
+    display: inline;
+}
+
+.result-image {
+    height: 100px;
+    object-fit: contain;
+
+    -webkit-touch-callout: default;
+    -webkit-user-select: default;
+    -webkit-tap-highlight-color:rgba(0, 0, 0, 0);
+}
+
+
 .retry-btn {
     clear: both;
     background-color: rgb(255, 249, 212);;
