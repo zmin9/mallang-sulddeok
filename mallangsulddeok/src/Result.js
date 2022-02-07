@@ -1,7 +1,6 @@
 import resultScript from './characteristic.json';
 import { useEffect, useState, useRef } from 'react';
 import domtoimage from 'dom-to-image';
-import { saveAs } from 'file-saver';
 
 import Loading from './Loading';
 import SocialShare from './SocialShare';
@@ -81,7 +80,7 @@ const Result = ({setPage, userValue}) => {
                     temp.onload=()=>setIsLoad(true);
                     setResultImg(temp);
             });
-            })
+        })
     };
 
     
