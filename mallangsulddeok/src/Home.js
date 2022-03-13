@@ -1,10 +1,9 @@
 import { useEffect } from "react";
+import {Link} from "react-router-dom";
 
-const Home = ({setPage, setUserValue}) => {
+const Home = () => {
 
     useEffect(() => {
-        setUserValue([0, 0, 0, 0]);
-
         let ins = document.createElement('ins');
         let scr = document.createElement('script');
 
@@ -22,15 +21,19 @@ const Home = ({setPage, setUserValue}) => {
     },[]);
     
     return(
-        <div className="home">
-            <div className='title'>
-                말랑술떡이 알려주는<br/>🍻당신의 술🍻
+        <div className="background">
+            <div className="home">
+                <div className='title'>
+                    말랑술떡이 알려주는<br/>🍻당신의 술🍻
+                </div>
+                <div className="group-image"></div>
+                <Link to='/test'>
+                    <div className='start-btn'>
+                        ― 입장하기 →
+                    </div>
+                </Link>
+                <div className="adfit-home" style={{width:'100%', marginTop:'100px'}}/>
             </div>
-            <div className="group-image"></div>
-            <div className='start-btn' onClick={()=>setPage(1)}>
-                ― 입장하기 →
-            </div>
-            <div className="adfit-home" style={{width:'100%', marginTop:'100px'}}/>
         </div>
     );
 }
