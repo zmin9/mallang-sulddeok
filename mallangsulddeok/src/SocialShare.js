@@ -108,9 +108,9 @@ function SocialShare({setPopupOpen}) {
 			objectType: 'feed',
 			content: {
 				title: '말랑술떡이 알려주는 술 MBTI',
-				description: '당신의 술을 확인하세요!',
+				description: '당신의 술을 확인하세요!🤔🍻🍸🥃🍷',
 				imageUrl:
-					'/home_image.jpg',
+					'https://github.com/zmin9/mallang-sulddeok/blob/main/mallangsulddeok/public/home_image.jpg?raw=true',
 				link: {
 					mobileWebUrl: currentUrl,
 					webUrl: currentUrl,

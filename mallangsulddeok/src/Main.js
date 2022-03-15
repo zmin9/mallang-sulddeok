@@ -40,7 +40,7 @@ const Main = () => {
                 setIndex(index + 1);
             }
             else {
-                linkTo(`/result/${answerList[0]/2*8+answerList[1]/2*4+answerList[2]/2*2+answerList[3]/2*1+93923}`);
+                linkTo(`/result/${Math.floor(answerList[0]/2)*8+Math.floor(answerList[1]/2)*4+Math.floor(answerList[2]/2)*2+Math.floor(answerList[3]/2)*1+93923}`);
             }
             // 선택된 값 변경
             setSelected(-1);
