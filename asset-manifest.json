@@ -1,0 +1,19 @@
+{
+  "files": {
+    "main.css": "/mallang-sulddeok/static/css/main.66b011d8.css",
+    "main.js": "/mallang-sulddeok/static/js/main.641bc348.js",
+    "static/media/NanumSquareRoundR.ttf": "/mallang-sulddeok/static/media/NanumSquareRoundR.f062cb52be3e9829834c.ttf",
+    "static/media/NanumSquareRoundB.ttf": "/mallang-sulddeok/static/media/NanumSquareRoundB.8ab117fc37409bd022e5.ttf",
+    "static/media/NanumSquareRoundEB.ttf": "/mallang-sulddeok/static/media/NanumSquareRoundEB.ef4043133d5b2d0febb4.ttf",
+    "static/media/home_image.png": "/mallang-sulddeok/static/media/home_image.4415d21ab603a9be1f3f.png",
+    "static/media/background_paper.png": "/mallang-sulddeok/static/media/background_paper.9d431cbd2b60e8b2bb73.png",
+    "static/media/background_line.png": "/mallang-sulddeok/static/media/background_line.25c99b3705f6d2f27af6.png",
+    "index.html": "/mallang-sulddeok/index.html",
+    "main.66b011d8.css.map": "/mallang-sulddeok/static/css/main.66b011d8.css.map",
+    "main.641bc348.js.map": "/mallang-sulddeok/static/js/main.641bc348.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.66b011d8.css",
+    "static/js/main.641bc348.js"
+  ]
+}
