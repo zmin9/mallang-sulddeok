@@ -20,9 +20,9 @@ const Result = () => {
     const { no } = useParams();
     const resultIndex = parseInt(no)-93923;
     const resultDrink = resultScript.characteristic[resultIndex];
-    const drinkImage = "/drinkImages/"+resultDrink.drinkName+".png";
-    const goodImage = "/drinkImages/"+resultDrink.goodMatching+".png";
-    const badImage = "/drinkImages/"+resultDrink.badMatching+".png";
+    const drinkImage = "https://zmin9.github.io/mallang-sulddeok/drinkImages/"+resultDrink.drinkName+".png";
+    const goodImage = "https://zmin9.github.io/mallang-sulddeok/drinkImages/"+resultDrink.goodMatching+".png";
+    const badImage = "https://zmin9.github.io/mallang-sulddeok/drinkImages/"+resultDrink.badMatching+".png";
 
     const [loading, setLoading] = useState(true);
     const [popupOpen, setPopupOpen] = useState(false);

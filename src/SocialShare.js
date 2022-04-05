@@ -110,7 +110,7 @@ function SocialShare({setPopupOpen}) {
 				title: '말랑술떡이 알려주는 술 MBTI',
 				description: '당신의 술을 확인하세요!🤔🍻🍸🥃🍷',
 				imageUrl:
-					'https://github.com/zmin9/mallang-sulddeok/blob/main/mallangsulddeok/public/home_image.jpg?raw=true',
+					'https://github.com/zmin9/mallang-sulddeok/blob/main/public/home_image.jpg?raw=true',
 				link: {
 					mobileWebUrl: currentUrl,
 					webUrl: currentUrl,
@@ -127,8 +127,8 @@ function SocialShare({setPopupOpen}) {
 				{
 					title: '나도 검사하기',
 					link: {
-						mobileWebUrl: 'https://alcohol-mbti.netlify.app/',
-						webUrl: 'https://alcohol-mbti.netlify.app/',
+						mobileWebUrl: 'https://zmin9.github.io/mallang-sulddeok/',
+						webUrl: 'https://zmin9.github.io/mallang-sulddeok/',
 					},
 				},
 			],
