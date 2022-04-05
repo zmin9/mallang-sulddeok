@@ -16,11 +16,15 @@
 ### 링크(설치X)
 > 모바일 접속을 권장합니다:)
 
-💻&📱 https://alcohol-mbti.netlify.app/
+💻&📱 <br/>
+https://alcohol-mbti.netlify.app/ (22.04.05 기준 막힘) <br/>
+https://zmin9.github.io/mallang-sulddeok/ <br/>
 ### 로컬(설치O)
 ```
 git clone https://github.com/zmin9/mallang-sulddeok.git
 cd mallang-sulddeok/mallangsulddeok
+git checkout 6646bc73b303cce48f548671f537baf671e4b57b // github page 최적화 전
+
 npm install
 npm start
 ```
